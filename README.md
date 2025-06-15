@@ -37,19 +37,7 @@ Traditional flashcard creation is time-consuming and repetitive. With the rise o
 
 ---
 
-## 🏗️ Architecture
 
-```mermaid
-flowchart TD
-    A[User Uploads Text or File] --> B[Streamlit UI]
-    B --> C[Text Extraction & Preprocessing]
-    C --> D[Gemini LLM API]
-    D --> E[Parse Q&A Flashcards]
-    E --> F[Review/Edit Table]
-    F --> G[Export (CSV/JSON)]
-```
-
----
 
 ## 📁 File Structure
 
@@ -161,16 +149,12 @@ A: Absolutely! Use Streamlit Cloud for one-click deployment.
 
 ## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+For major changes, please open an issue first to discuss what you would like to change.
 
 ---
 
 ## 📫 Contact
-
-For questions, feedback, or collaboration, open an issue or email [your.email@domain.com](mailto:your.email@domain.com)
-
+Thank you for using LLM Flashcard Generator! If you have any questions or need support, please open an issue or email [urjagjeetsingh@gmail.com](mailto:urjagjeetsingh@gmail.com).
 ---
 
-## 📜 License
 
-[MIT](LICENSE)
