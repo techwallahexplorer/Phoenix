@@ -146,7 +146,7 @@ streamlit run app.py
 ## ❓ FAQ
 
 **Q: What file types are supported?**
-A: You can upload `.txt` files or paste any text. (PDF support can be added easily.)
+A: You can upload `.txt` 'docx' files or paste any text. 
 
 **Q: Is my data private?**
 A: Yes, all processing happens locally—your data is never stored or shared.
@@ -158,19 +158,4 @@ A: Yes! Just set your API key in the `.env` file.
 A: Absolutely! Use Streamlit Cloud for one-click deployment.
 
 ---
-
-## 🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📫 Contact
-
-For questions, feedback, or collaboration, open an issue or email [your.email@domain.com](mailto:your.email@domain.com)
-
----
-
-## 📜 License
-
-[MIT](LICENSE)
+Thank you for using LLM Flashcard Generator! If you have any questions or need support, please open an issue or email [urjagjeetsingh@gmail.com](mailto:urjagjeetsingh@gmail.com).

@@ -3,4 +3,5 @@ openai
 pandas
 PyPDF2
 python-dotenv
+python-docx
 requests

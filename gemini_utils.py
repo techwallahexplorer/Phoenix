@@ -27,7 +27,7 @@ def gemini_generate_flashcards(text, subject=None, api_key=None):
     if not api_key:
         raise ValueError("Gemini API key not set. Set GEMINI_API_KEY as env variable or pass as argument.")
     prompt = f"""
-You are an expert {subject or 'general'} educator. Given the following educational content, generate as many flashcards as possible, even if the input is just a single word. For very short input, generate at least one flashcard. Each flashcard should have:
+You are an expert {subject or 'general'} educator. Given the following educational content, generate at least 12 question-answer flashcards, even if the input is very short. If the content is insufficient, create creative or related questions to reach at least 12 flashcards. Each flashcard should have:
 - A clear, concise question
 - A factually correct, self-contained answer
 Format output as Q: ...\nA: ... pairs.\n\nContent:\n{text}

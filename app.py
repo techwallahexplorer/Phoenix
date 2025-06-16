@@ -35,9 +35,18 @@ def run_streamlit_app():
     import os
     from io import StringIO
     from dotenv import load_dotenv
+    import sys
+    print("PYTHON EXECUTABLE:", sys.executable)
+    print("PYTHON PATH:", sys.path)
+    try:
+        import docx
+        print("docx module found! Version:", getattr(docx, '__version__', 'unknown'))
+    except ImportError as e:
+        print("ERROR: Could not import docx:", e)
 
     # Load environment variables
     load_dotenv()
+    print("Loaded GEMINI_API_KEY:", os.getenv("GEMINI_API_KEY"))
 
     st.set_page_config(page_title="LLM Flashcard Generator", layout="wide")
     st.title("📚 LLM Flashcard Generator")
@@ -49,7 +58,7 @@ def run_streamlit_app():
         input_method = st.radio("Choose input method:", ["Upload .txt/.pdf", "Paste text"])
 
     if input_method == "Upload .txt/.pdf":
-        uploaded_file = st.file_uploader("Upload file", type=["txt", "pdf"])
+        uploaded_file = st.file_uploader("Upload file", type=["txt", "pdf", "docx"])
         text_input = None
     else:
         uploaded_file = None
@@ -60,6 +69,15 @@ def run_streamlit_app():
             if uploaded_file:
                 if uploaded_file.name.endswith(".pdf"):
                     text = extract_text_from_pdf(uploaded_file)
+                elif uploaded_file.name.endswith(".docx"):
+                    from docx import Document
+                    import tempfile
+                    # Save uploaded DOCX to a temp file for docx.Document
+                    with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp:
+                        tmp.write(uploaded_file.getvalue())
+                        tmp_path = tmp.name
+                    doc = Document(tmp_path)
+                    text = "\n".join([para.text for para in doc.paragraphs])
                 else:
                     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
                     text = stringio.read()
