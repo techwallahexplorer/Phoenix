@@ -98,6 +98,58 @@ LLM/
 
 ---
 
+## 🖥️ Running the Project via GitHub, Git Bash, and CLI
+
+This project is designed to be run from any terminal environment, including **Git Bash**, **Windows Command Prompt**, **PowerShell**, **Mac Terminal**, and **Linux shell**. Follow these professional, step-by-step instructions to ensure a smooth setup and launch:
+
+### 1. Clone the Repository
+Clone the repository from GitHub using your preferred terminal:
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+```
+
+### 2. Install Python Dependencies
+Install all required Python packages:
+```bash
+pip install -r requirements.txt
+```
+- If you have multiple Python versions, use:
+  ```bash
+  python -m pip install -r requirements.txt
+  ```
+- If you encounter permission errors, try:
+  ```bash
+  pip install --user -r requirements.txt
+  ```
+
+### 3. Configure Your API Key
+Create a `.env` file in the project root directory and add your Gemini API key:
+```env
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
+- Replace `YOUR_GEMINI_API_KEY` with your actual key from [Google AI Studio](https://ai.google.dev/).
+
+### 4. Launch the Application
+Start the Streamlit app using one of the following commands:
+```bash
+streamlit run app.py
+```
+- If `streamlit` is not recognized, use:
+  ```bash
+  python -m streamlit run app.py
+  ```
+
+After running the command, open your browser and navigate to [http://localhost:8501](http://localhost:8501) to use the app.
+
+### 5. Notes for Windows, Mac, and Linux Users
+- All commands above work in **Git Bash**, **Command Prompt**, **PowerShell**, **Mac Terminal**, and **Linux shell**.
+- If you see a `ModuleNotFoundError`, ensure you are installing packages for the same Python interpreter that runs Streamlit.
+- For advanced troubleshooting, consult the [Streamlit documentation](https://docs.streamlit.io/) or your terminal’s help resources.
+
+---
+
+
 ## 🌐 Deployment
 
 ### Deploy via Command Line
